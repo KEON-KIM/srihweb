@@ -4,6 +4,7 @@ package Queue;
 public class LinkedQueue {
 	private Node back;
 	private Node front;
+	private int count=1;
 	
 	private class Node{
 		private Object data;
@@ -30,12 +31,13 @@ public class LinkedQueue {
 		return (back.getNext()==null);
 	}
 	public boolean Empty() {
-		return (front.getPrev()==back);
+		return (front.getPrev()==null);
 	}
 	public void Enqueue(Object item) {
 
 		if(empty()) {
 			Node newNode = new Node(item,null,null);
+			front.setPrev(newNode);
 			back.setNext(newNode);
 			newNode.setNext(front);
 			newNode.setPrev(back);
@@ -55,12 +57,17 @@ public class LinkedQueue {
 	public Object peek() {
 		if(Empty()) 
 			throw new ArrayIndexOutOfBoundsException();
-		System.out.println(front.getData());
+		count--;
 		return front.getPrev().getData();
 	}
 	public Object Dequeue() {
+		if(count==1) {
+			return peek();
+		}
 		front.setPrev(front.getPrev().getPrev());
+		
 		return peek();
+		
 	}
 	
 }
