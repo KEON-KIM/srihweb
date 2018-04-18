@@ -10,8 +10,6 @@ public class QueueTesting {
 		}
 		System.out.println(Queue.Dequeue());
 		System.out.println(Queue.Dequeue());
-		System.out.println(Queue.Dequeue());
-		System.out.println(Queue.Dequeue());
 
 
 
