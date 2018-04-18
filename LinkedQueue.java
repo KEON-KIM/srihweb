@@ -1,5 +1,5 @@
 package Queue;
-
+/* this is DataStructure and OpenSource Project. I really hard study*/ 
 
 public class LinkedQueue {
 	private Node back;
